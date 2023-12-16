@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  java-backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_HOST=mysql
+      - JAVA_OPTS=-Xmx1G
+      - DB_PASSWORD=rootpassword
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - my_intranet
+
+  mysql:
+    image: mysql:latest
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 5
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - my_intranet
+    # volumes:
+    #   - mysql-data:/var/lib/mysql
+
+  angular-frontend:
+    depends_on:
+      - java-backend
+    build: ./frontend
+    networks:
+      - my_intranet
+    ports:
+      - "4200:4200"
+
+# volumes:
+#   mysql-data:
+
+networks:
+  my_intranet:
+    driver: bridge
