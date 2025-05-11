@@ -3,29 +3,27 @@
 
 /* === ANIMAÇÕES === */
 
-@keyframes pisca_pisca{
-	0%{
+/*
+@keyframes pisca_pisca {
+	0% {
 		opacity: 0.4;
 	}
-
-	50%{
+	50% {
 		opacity: 1;
 	}
-
-	100%{
+	100% {
 		opacity: 0.4;
 	}
 }
 
-@keyframes startMenu{
-	0%{
+@keyframes startMenu {
+	0% {
 		opacity: 0;
 		position: absolute;
 		left: -300px;
 		color: black;
 	}
-
-	100%{
+	100% {
 		opacity: 1;
 		position: absolute;
 		left: 0;
@@ -34,7 +32,7 @@
 }
 
 @keyframes changeBackgroundColor {
-  0% {
+	0% {
     background-color: #800080;
   }
   50% {
@@ -47,27 +45,25 @@
   }
 }
 
-@keyframes expandItems{
-
-	0%{
+@keyframes expandItems {
+	0% {
 		width: 500px;
 		opacity: 0.8;
 		background:  transparent;
 		color: whitesmoke;
 	}
-
-	100%{
+	100% {
 		width: 520px;
 		opacity: 1;
 		background: #ffe6ff;
 		color: black;
-
 	}
 }
+*/
 
 /* === ESTILOS CABEÇALHO === */
 
-*{
+* {
 	text-decoration: none;
 	font-family: arial;
 	margin: 0;
@@ -75,19 +71,18 @@
 	max-width: 100%;
 }
 
-a{
+a {
 	text-decoration: none;
 }
 
-body{
+body {
 	animation: startMenu 2s;
 	background:  linear-gradient(45deg, #ffccff ,#660066 );
 	background-repeat: no-repeat;
-	
 	max-width: 100%;
 }
 
-.cabecalho{
+.cabecalho {
 	background: #660066;
 	height: 120px;
 	position: relative;
@@ -97,28 +92,27 @@ body{
 	width: 100%;
 }
 
-.links_laterais{
+.links_laterais {
 	display: flex;
 	flex-direction: column;
 }
 
-.login{
+.login {
 	color: white;
 	padding: 7px;
 }
 
-.login:hover{
+.login:hover {
 	background: white;
 	color: #660066;
 }
 
-.logo{
+.logo {
 	padding-left: 55px;
 	margin: 10px;
-
 }
 
-.texto{
+.texto {
 	color: 	#FFFAFA;
 	display: flex;
 	flex-direction: column;
@@ -127,7 +121,7 @@ body{
 	font-size: 1.5em;
 }
 
-.menu{
+.menu {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -135,7 +129,7 @@ body{
 	margin-right: 0px;
 }
 
-nav a{
+nav a {
 	background:#800080;
 	border: 1px solid #FFFAFA;
 	text-decoration: none;
@@ -148,7 +142,7 @@ nav a{
 	font-family: 'Indie Flower', cursive;
 }
 
-nav a:hover{
+nav a:hover {
 	animation: changeBackgroundColor 1s;
 	animation-iteration-count: 1; 
 	background-color: #FFFAFA;
@@ -157,45 +151,45 @@ nav a:hover{
 
 /* === MAIN === */
 
-main{
+main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	max-width: 100%;
 	min-height: 100vh;
-
 }
+
 .slider {
-    display: block;
-    height: 293px;
-    width: 600px;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
+	display: block;
+	height: 293px;
+	width: 600px;
+	margin: auto;
+	margin-top: 20px;
+	position: relative;
 }
 
-/*.container{
+/*
+.container {
 	margin: 15px;
 	background-color: whitesmoke;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}*/
+}
+*/
 
-.img_home{
+.img_home {
 	animation: pisca_pisca 2s infinite;
 }
 
-
-
-.titulo{
+.titulo {
 	color: whitesmoke;
 	margin: 20px;
 	padding: 10px;
 	width: 600px;
 }
 
-.receitas{
+.receitas {
 	align-items: center;
 	float: left;
 	opacity: 0.85;
@@ -211,11 +205,11 @@ main{
 	border-radius: 10%;
 }
 
-.conteudo{
+.conteudo {
 	float: left;
 }
 
-.receitas:hover{
+.receitas:hover {
 	animation: expandItems 1s;
 	background: #ffe6ff;
 	width: 520px;
@@ -223,7 +217,7 @@ main{
 	color: black;
 }
 
-.rodape{
+.rodape {
 	background: #660066;
 	height: 150px;
 	display: flex;
@@ -233,7 +227,7 @@ main{
 	margin-bottom: 0%;
 }
 
-.unidades_rodape{
+.unidades_rodape {
 	height: 35px;
 	color: 	#FFFAFA;
 	display: flex;
@@ -244,16 +238,17 @@ main{
 	padding: 0;
 }
 
-.link_rodape{
+.link_rodape {
 	text-decoration: none;
 	color: #FFFAFA;
 }
-.link_rodape:hover{
+
+.link_rodape:hover {
 	font-size: 1.2em;
 	color: yellow;
 }
 
-.formulario_email{
+.formulario_email {
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
